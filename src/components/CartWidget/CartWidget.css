@@ -1,0 +1,19 @@
+.cartWidget
+{
+    display: contents;
+    margin: 10px;
+}
+.cartWidget:hover
+{
+    cursor: pointer;
+}
+
+.cartWidget__icon
+{
+    float: left;
+    margin-right: 5px;
+}
+.cartWidget__quantity
+{
+    align-items: center;
+}

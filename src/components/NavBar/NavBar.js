@@ -1,6 +1,7 @@
 import React from 'react'
+import './NavBar.css';
 import SearchIcon from '@material-ui/icons/Search';
-import './NavBar.css'
+import CartWidget from '../CartWidget/CartWidget'
 
 export const Header = () => {
     return (
@@ -29,8 +30,7 @@ export const Header = () => {
 
                 <a className="header__link">
                     <div className="header__basketItem">
-                        <span>Cart</span>
-                        <span className="header__item__lineTwo products__Count">1</span>
+                        <CartWidget/>
                     </div>
 
                 </a>
