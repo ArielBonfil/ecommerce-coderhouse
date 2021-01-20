@@ -1,25 +1,22 @@
-import './App.css';
-import NavBar from './components/NavBar/NavBar'
-import ItemListContainer from './components/ItemListContainer/ItemListContainer'
+import "./App.css";
+import NavBar from "./components/NavBar/NavBar";
+import ItemListContainer from "./components/ItemListContainer/ItemListContainer";
 import ItemCount from "./components/ItemCount/ItemCount";
 
 function App() {
   return (
     <div className="App">
       <div>
-        <NavBar/>
+        <NavBar />
       </div>
       <div>
-        <ItemCount stock="15" initial= '1' />
+        <ItemCount stock="15" initial="1" />
       </div>
       <div>
-        <ItemListContainer greeting='Bonfil'/>
+        <ItemListContainer />
       </div>
-
-
     </div>
   );
 }
 
 export default App;
-console.log("hi")
