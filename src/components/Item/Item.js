@@ -2,7 +2,7 @@ import React from "react";
 import "./Item.css";
 
 export const Item = (item) => {
-  console.log(item);
+  console.log("item: " + item);
   return (
     <div className="item">
       <img src={item.image} className="item__image" alt={item.title} />
