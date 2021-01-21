@@ -1,13 +1,13 @@
 import React from "react";
 import Item from "../Item/Item";
-
-export const ItemList = (products) => {
-  console.log("array de objetos: " + products); //no esta trayendo un array :( y ademas da problemas el .map
+import "./ItemList.css";
+export const ItemList = ({ items }) => {
+  console.log("array de objetos: " + items); //no esta trayendo un array :( y ademas da problemas el .map
   return (
-    <ul>
-      {products.map((item) => (
+    <ul className="listContainer">
+      {items.map((item) => (
         <li key={item.id}>
-          <Item props={item} />
+          <Item item={item} />
         </li>
       ))}
     </ul>

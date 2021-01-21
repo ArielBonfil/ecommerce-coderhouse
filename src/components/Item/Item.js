@@ -1,7 +1,7 @@
 import React from "react";
 import "./Item.css";
 
-export const Item = (item) => {
+export const Item = ({ item }) => {
   console.log("item: " + item);
   return (
     <div className="item">

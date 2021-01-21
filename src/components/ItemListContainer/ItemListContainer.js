@@ -32,7 +32,7 @@ export const ItemListContainer = () => {
   } else if (!isLoaded) {
     return <div>Loading...</div>;
   } else {
-    return <ItemList props={items} />;
+    return <ItemList items={items} />;
   }
 };
 
