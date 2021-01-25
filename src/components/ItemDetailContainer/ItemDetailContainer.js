@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import ItemDetail from "../ItemDetail/ItemDetail";
 
-const productURL = "https://fakestoreapi.com/products/5"; //traigo un producto especifico en este caso, para mostrarlo en item detail
+const productURL = "https://fakestoreapi.com/products/2"; //traigo un producto especifico en este caso, para mostrarlo en item detail
 
 export const ItemListContainer = () => {
   const [error, setError] = useState(null);
