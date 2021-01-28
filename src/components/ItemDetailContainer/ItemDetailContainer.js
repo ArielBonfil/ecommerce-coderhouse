@@ -2,9 +2,15 @@ import React, { useEffect, useState } from "react";
 import ItemDetail from "../ItemDetail/ItemDetail";
 import { useParams } from "react-router-dom";
 
+<<<<<<< HEAD
 export const ItemDetailContainer = () => {
   const { id } = useParams();
   const productURL = `https://fakestoreapi.com/products/${id}`; //traigo un producto especifico en este caso, para mostrarlo en item detail
+=======
+const productURL = "https://fakestoreapi.com/products/2"; //traigo un producto especifico en este caso, para mostrarlo en item detail
+
+export const ItemListContainer = () => {
+>>>>>>> 9892916c53413c7af3a03041c9385475d707268f
   const [error, setError] = useState(null);
   const [isLoaded, setIsLoaded] = useState(false);
   const [item, setItem] = useState();

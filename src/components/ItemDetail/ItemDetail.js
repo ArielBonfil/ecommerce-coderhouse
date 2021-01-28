@@ -2,7 +2,7 @@ import React from "react";
 import "./ItemDetail.css";
 import ItemCount from "../ItemCount/ItemCount";
 
-export const ItemDetails = ({ item }) => {
+export const ItemDetail = ({ item }) => {
   return (
     <div className="productPage">
       <div className="productPage__leftColumn">
@@ -32,4 +32,4 @@ export const ItemDetails = ({ item }) => {
   );
 };
 
-export default ItemDetails;
+export default ItemDetail;
