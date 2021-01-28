@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from "react";
 import ItemDetail from "../ItemDetail/ItemDetail";
+import { useParams } from "react-router-dom";
 
-const productURL = "https://fakestoreapi.com/products/5"; //traigo un producto especifico en este caso, para mostrarlo en item detail
-
-export const ItemListContainer = () => {
+export const ItemDetailContainer = () => {
+  const { id } = useParams();
+  const productURL = `https://fakestoreapi.com/products/${id}`; //traigo un producto especifico en este caso, para mostrarlo en item detail
   const [error, setError] = useState(null);
   const [isLoaded, setIsLoaded] = useState(false);
   const [item, setItem] = useState();
@@ -13,8 +14,8 @@ export const ItemListContainer = () => {
     fetch(productURL)
       .then((response) => response.json())
       .then((data) => {
-        setIsLoaded(true);
         setItem(data);
+        setIsLoaded(true);
       })
       .catch((e) => {
         setIsLoaded(false);
@@ -35,4 +36,4 @@ export const ItemListContainer = () => {
   }
 };
 
-export default ItemListContainer;
+export default ItemDetailContainer;

@@ -1,5 +1,6 @@
 import React from "react";
 import "./ItemDetail.css";
+import ItemCount from "../ItemCount/ItemCount";
 
 export const ItemDetails = ({ item }) => {
   return (
@@ -17,6 +18,10 @@ export const ItemDetails = ({ item }) => {
         <div className="productPage__producPrice">
           <span>${item.price}</span>
           <br></br>
+          <div>
+            <ItemCount stock={15} initial={1} />
+          </div>
+
           <br></br>
           <a href="#" className="productPage__button">
             Add to cart

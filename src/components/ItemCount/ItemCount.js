@@ -24,9 +24,6 @@ const ItemCount = ({ stock, initial }) => {
       <button className="itemCount__button" onClick={addItem}>
         +
       </button>
-      <button className="itemCount__button">
-        todo esto va para el checkout (cuando haya uno)
-      </button>
       <div className="itemCount__warning">{warning}</div>
     </div>
   );
