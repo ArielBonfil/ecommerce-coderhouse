@@ -1,21 +1,20 @@
 import React, { useEffect, useState } from "react";
-import ItemDetail from "../ItemDetail/ItemDetail";
-import { useParams } from "react-router-dom";
+import NavBar from "../NavBar/NavBar";
 
-export const ItemDetailContainer = () => {
-  const { id } = useParams();
-  const productURL = `https://fakestoreapi.com/products/${id}`; //traigo un producto especifico en este caso, para mostrarlo en item detail
+const categoriesURL = "https://fakestoreapi.com/products/categories";
+
+export const NavBarContainer = () => {
   const [error, setError] = useState(null);
   const [isLoaded, setIsLoaded] = useState(false);
-  const [item, setItem] = useState();
+  const [cats, setCats] = useState([]);
 
-  const getItems = () => {
+  const getItems = async () => {
     setIsLoaded(false);
-    fetch(productURL)
+    fetch(categoriesURL)
       .then((response) => response.json())
       .then((data) => {
-        setItem(data);
         setIsLoaded(true);
+        setCats(data);
       })
       .catch((e) => {
         setIsLoaded(false);
@@ -32,8 +31,8 @@ export const ItemDetailContainer = () => {
   } else if (!isLoaded) {
     return <div>Loading...</div>;
   } else {
-    return <ItemDetail item={item} />;
+    return <NavBar cats={cats} />;
   }
 };
 
-export default ItemDetailContainer;
+export default NavBarContainer;

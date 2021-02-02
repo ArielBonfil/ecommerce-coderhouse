@@ -19,7 +19,7 @@ export const ItemDetail = ({ item }) => {
           <span>${item.price}</span>
           <br></br>
           <div>
-            <ItemCount stock={15} initial={1} />
+            <ItemCount stock={15} initial={3} />
           </div>
 
           <br></br>

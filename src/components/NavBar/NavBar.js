@@ -1,7 +1,10 @@
 import React from "react";
 import "./NavBar.css";
+import CartWidget from "../CartWidget/CartWidget";
 import { Link, NavLink } from "react-router-dom";
-export const Header = () => {
+
+export const Header = ({ cats }) => {
+  console.log(cats);
   return (
     <nav className="header">
       <Link to="/">
@@ -13,30 +16,12 @@ export const Header = () => {
           ></img>
         </a>
       </Link>
-      <ul className="header__categories">
-        <a>
-          <li className="header__categories__item">
-            <NavLink to={`/category/1`}>CAT1</NavLink>
+      <ul className="listContainer">
+        {cats.map((item) => (
+          <li className="listContainer__item" key={item}>
+            <NavLink to={`/category/${item}`}>{item}</NavLink>
           </li>
-        </a>
-        <a>
-          {" "}
-          <li className="header__categories__item">
-            <NavLink to={`/category/2`}>CAT2</NavLink>
-          </li>
-        </a>
-        <a>
-          {" "}
-          <li className="header__categories__item">
-            <NavLink to={`/category/3`}>CAT3</NavLink>
-          </li>
-        </a>
-        <a>
-          {" "}
-          <li className="header__categories__item">
-            <NavLink to={`/category/4`}>CAT4</NavLink>
-          </li>
-        </a>
+        ))}
       </ul>
 
       <div className="header__search">
@@ -47,7 +32,9 @@ export const Header = () => {
       <div className="header__nav">
         <a className="header__link">
           <div className="header__basketItem">
-            <Link to="/cart">CART</Link>
+            <Link to="/cart">
+              <CartWidget />
+            </Link>
           </div>
         </a>
       </div>

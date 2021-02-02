@@ -1,13 +1,10 @@
 import React from "react";
 import "./CartWidget.css";
-import ShoppingBasketIcon from "@material-ui/icons/ShoppingBasket";
 
+import useAppContext from "../../Context/Context";
 export const CartWidget = () => {
-  return (
-    <div className="cartWidget">
-      <p>CART</p>
-    </div>
-  );
+  const quantity = useAppContext();
+  return <div className="cartWidget">{quantity}</div>;
 };
 
 export default CartWidget;
