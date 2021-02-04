@@ -6,11 +6,11 @@ import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import Cart from "./components/Cart/Cart";
 import NavBarContainer from "./components/NavBarContainer/NavBarContainer";
 import Category from "./components/Category/Category";
-import Context from "./Context/Context";
+import CartContext from "./CartContext/CartContext";
 
 function App() {
   return (
-    <Context>
+    <CartContext>
       <Router>
         <NavBarContainer />
         <Switch>
@@ -28,7 +28,7 @@ function App() {
           </Route>
         </Switch>
       </Router>
-    </Context>
+    </CartContext>
   );
 }
 

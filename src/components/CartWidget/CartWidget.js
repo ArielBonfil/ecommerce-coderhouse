@@ -1,10 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 import "./CartWidget.css";
-import useAppContext from "../../Context/Context";
-
-export const CartWidget = () => {
-  const quantity = useAppContext();
-  return <div className="cartWidget">{quantity}</div>;
+import { Quantity } from "../../CartContext/CartContext";
+export const CartWidget = ({ cant }) => {
+  return;
+  <div className="cartWidget">{cant}</div>;
 };
 
 export default CartWidget;

@@ -14,12 +14,12 @@ export const ItemListContainer = () => {
     fetch(productsURL)
       .then((response) => response.json())
       .then((data) => {
-        setIsLoaded(true);
         setItems(data);
+        setIsLoaded(true);
       })
       .catch((e) => {
-        setIsLoaded(false);
         setError(e);
+        setIsLoaded(false);
       });
   };
 

@@ -7,7 +7,7 @@ export const ItemDetailContainer = () => {
   const productURL = `https://fakestoreapi.com/products/${id}`; //traigo un producto especifico en este caso, para mostrarlo en item detail
   const [error, setError] = useState(null);
   const [isLoaded, setIsLoaded] = useState(false);
-  const [item, setItem] = useState();
+  const [item, setItem] = useState({});
 
   const getItems = () => {
     setIsLoaded(false);
@@ -18,8 +18,8 @@ export const ItemDetailContainer = () => {
         setIsLoaded(true);
       })
       .catch((e) => {
-        setIsLoaded(false);
         setError(e);
+        setIsLoaded(false);
       });
   };
 

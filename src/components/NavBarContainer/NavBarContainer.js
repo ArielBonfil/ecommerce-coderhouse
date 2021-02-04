@@ -13,12 +13,12 @@ export const NavBarContainer = () => {
     fetch(categoriesURL)
       .then((response) => response.json())
       .then((data) => {
-        setIsLoaded(true);
         setCats(data);
+        setIsLoaded(true);
       })
       .catch((e) => {
-        setIsLoaded(false);
         setError(e);
+        setIsLoaded(false);
       });
   };
 

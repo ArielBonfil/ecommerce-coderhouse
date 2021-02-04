@@ -1,8 +1,16 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import "./ItemDetail.css";
 import ItemCount from "../ItemCount/ItemCount";
+import CartContext from "../../CartContext/CartContext";
 
 export const ItemDetail = ({ item }) => {
+  const [quantity, setQuantity] = useState(0);
+
+  useEffect(() => {
+    <ItemCount onAdd={setQuantity} />;
+  }, [quantity]);
+
+  const addItem = () => {};
   return (
     <div className="productPage">
       <div className="productPage__leftColumn">
@@ -23,9 +31,10 @@ export const ItemDetail = ({ item }) => {
           </div>
 
           <br></br>
-          <a href="#" className="productPage__button">
+          <a href="#" className="productPage__button" onClick={this.addItem()}>
             Add to cart
           </a>
+          <div>cantidad de items desde item detail {quantity}</div>
         </div>
       </div>
     </div>
