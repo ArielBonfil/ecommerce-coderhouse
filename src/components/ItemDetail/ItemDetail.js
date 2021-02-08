@@ -6,11 +6,10 @@ import CartContext from "../../CartContext/CartContext";
 export const ItemDetail = ({ item }) => {
   const [quantity, setQuantity] = useState(0);
 
-  useEffect(() => {
-    <ItemCount onAdd={setQuantity} />;
-  }, [quantity]);
+  const onAdd = (cant) => {
+    setQuantity(cant);
+  };
 
-  const addItem = () => {};
   return (
     <div className="productPage">
       <div className="productPage__leftColumn">
@@ -27,14 +26,12 @@ export const ItemDetail = ({ item }) => {
           <span>${item.price}</span>
           <br></br>
           <div>
-            <ItemCount stock={15} initial={3} />
+            <ItemCount stock={15} initial={3} onAdd={onAdd} />
           </div>
 
           <br></br>
-          <a href="#" className="productPage__button" onClick={this.addItem()}>
-            Add to cart
-          </a>
-          <div>cantidad de items desde item detail {quantity}</div>
+
+          <button>Agregar {quantity} items al carrito</button>
         </div>
       </div>
     </div>

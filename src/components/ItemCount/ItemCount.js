@@ -9,6 +9,10 @@ const ItemCount = ({ stock, initial, onAdd }) => {
   const [cant, setCant] = useState(Number(initial));
   const [warning, setWarning] = useState("");
 
+  useEffect(() => {
+    onAdd(cant);
+  }, [cant]);
+
   const removeItem = () => {
     cant === 1 ? setCant(cant) : setCant(cant - 1);
     cant === Number(stock) && setWarning("");
