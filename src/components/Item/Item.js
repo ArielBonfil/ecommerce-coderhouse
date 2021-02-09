@@ -12,7 +12,7 @@ export const Item = ({ item }) => {
         <p className="item__price">{item.price}</p>
         <p className="item__description">{item.description}</p>
         <p className="item__id">{item.id}</p>
-        <button className="item__button">Add to Cart</button>
+        <button className="item__button">Ver producto</button>
       </div>
     </NavLink>
   );

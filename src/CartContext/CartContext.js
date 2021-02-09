@@ -1,28 +1,39 @@
 import React, { createContext, useContext, useState } from "react";
 
-const Quantity = createContext(null);
-export const useAppContext = () => useContext(Quantity);
+const CartContext = createContext(null);
+export const useCartContext = () => useContext(CartContext);
 
-export const CartContext = ({ children }) => {
-  const [quantity, setQuantity] = useState();
-  const [arrItems, setArrItems] = useState([]); //hago que sea array por si necesito guardar mas de 1 item en mi carrito ok?
-  const addItem = (item) => {
-    if (!arrItems.includes(item)) {
-      setArrItems(...arrItems, item); //el item seria un objeto
-    } else {
-      alert("ya existe el item");
+export const CartProvider = ({ children }) => {
+  const [items, setItems] = useState([{}, {}, {}, {}, {}]);
+
+  const addItem = (item, quantity) => {
+    if (isInCart(item.id) === undefined) {
+      setItems([...items, { item, quantity }]);
     }
-  };
-  const removeItem = (item) => {};
+  }; //no estoy logrando adicionar Items al carrito correctamente, no logro pasar los parametros en el metodo
+
   const clear = () => {
-    //logica
+    setItems([]);
   };
-  const isInCart = (item) => {
-    //logica
+  const isInCart = (id) => {
+    items.find((item) => item.id === id);
   };
-  const onAdd = (quantity) => {
-    //
+  const removeItem = (id) => {
+    items.find((item) => item.id === id);
+    alert("el item que queres eliminar es el:" + id);
   };
-  return <Quantity.Provider value={{ onAdd }}>{children}</Quantity.Provider>;
+
+  return (
+    <CartContext.Provider
+      value={{
+        items,
+        addItem,
+        clear,
+        removeItem,
+      }}
+    >
+      {children}
+    </CartContext.Provider>
+  );
 };
-export default CartContext;
+export default CartProvider;

@@ -1,14 +1,15 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import "./ItemDetail.css";
 import ItemCount from "../ItemCount/ItemCount";
-import CartContext from "../../CartContext/CartContext";
+import { useCartContext } from "../../CartContext/CartContext";
 
 export const ItemDetail = ({ item }) => {
   const [quantity, setQuantity] = useState(0);
-
   const onAdd = (cant) => {
     setQuantity(cant);
   };
+
+  const { addItem } = useCartContext(); //nose porque no esta funcionando este metodo del "CartContext"
 
   return (
     <div className="productPage">
@@ -31,7 +32,7 @@ export const ItemDetail = ({ item }) => {
 
           <br></br>
 
-          <button>Agregar {quantity} items al carrito</button>
+          <button onClick={addItem}>Agregar {quantity} items al carrito</button>
         </div>
       </div>
     </div>
