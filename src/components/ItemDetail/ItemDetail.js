@@ -32,7 +32,17 @@ export const ItemDetail = ({ item }) => {
 
           <br></br>
 
-          <button onClick={addItem}>Agregar {quantity} items al carrito</button>
+          {/* <button onClick={handleClick}>
+            Agregar {quantity} items al carrito
+          </button> */}
+
+          {/* <button onClick={() =>handleClick('pepe')}>
+            Agregar {quantity} items al carrito
+          </button> */}
+
+          <button onClick={() => addItem(item, quantity)}>
+            Agregar {quantity} items al carrito
+          </button>
         </div>
       </div>
     </div>
