@@ -7,28 +7,25 @@ export const CartProvider = ({ children }) => {
   const [items, setItems] = useState([]);
 
   const addItem = (item, quantity) => {
-    console.log("pepe");
-    console.log(isInCart(item.id));
-    if (isInCart(item.id) === undefined) {
-      setItems([...items, { item, quantity }]);
-      console.log({ item, quantity });
+    console.log(searchItem(item.id));
+    if (searchItem(item.id) === undefined) {
+      setItems((items) => [...items, { item, quantity: quantity }]);
     } else {
-      //o que tire o acumular cantidad
+      alert("ya esta este item en el carrito");
     }
-
-    //{item: {id: 1, name: 'sarasa'}, quantity: 2}
-  }; //no estoy logrando adicionar Items al carrito correctamente, no logro pasar los parametros en el metodo
+    console.log(items);
+  };
 
   const clear = () => {
     setItems([]);
   };
-  const isInCart = (id) => {
-    return items.find((i) => i.item.id === id);
+
+  const searchItem = (id) => {
+    return items.find((x) => x.item.id === id);
   };
 
   const removeItem = (id) => {
-    //items.find((item) => item.item.id === id);
-    alert("el item que queres eliminar es el:" + id);
+    setItems(items.filter((x) => x.item.id !== id));
   };
 
   return (

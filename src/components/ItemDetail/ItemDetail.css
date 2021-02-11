@@ -1,14 +1,15 @@
 .productPage {
   text-align: -webkit-center;
+  display: flex;
+  margin-top: 50px;
 }
 .productPage__leftColumn {
-  width: 65%;
+  width: 40%;
   position: relative;
 }
 
 .productPage__rightColumn {
-  width: 35%;
-  margin-top: 60px;
+  width: 60%;
 }
 
 .productPage__leftColumn img {
