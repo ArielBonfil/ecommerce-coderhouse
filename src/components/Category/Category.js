@@ -9,11 +9,12 @@ export const Category = ({ category }) => {
 
   var parts = window.location.href.split("/");
   var lastSegment = parts.pop() || parts.pop();
-  //nose como resolver la parte de la recepcion de la prop que indicaria que categoria filtrar.
+  //nose como resolver la parte de la recepcion de la prop que indicaria que categoria filtrar. Si das f5 en la categoria "men clothing" trae los items correspondientes
   const getItems = () => {
     setIsLoaded(false);
     const db = getFirestore();
     const itemCollection = db.collection("items");
+
     const catItems = itemCollection.where("category", "==", lastSegment);
     catItems
       .get()
