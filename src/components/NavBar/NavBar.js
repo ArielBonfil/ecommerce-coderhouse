@@ -2,19 +2,17 @@ import React from "react";
 import "./NavBar.css";
 import CartWidget from "../CartWidget/CartWidget";
 import { Link, NavLink } from "react-router-dom";
-
+import Category from "../Category/Category";
 export const Header = ({ cats }) => {
   console.log(cats);
   return (
     <nav className="header">
       <Link to="/">
-        <a>
-          <img
-            className="header__logo"
-            src="http://pngimg.com/uploads/amazon/amazon_PNG11.png"
-            alt="amazon logo"
-          ></img>
-        </a>
+        <img
+          className="header__logo"
+          src="http://pngimg.com/uploads/amazon/amazon_PNG11.png"
+          alt="amazon logo"
+        ></img>
       </Link>
       <ul className="listContainer">
         {cats.map((item) => (
